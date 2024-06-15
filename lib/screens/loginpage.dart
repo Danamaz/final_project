@@ -139,7 +139,7 @@ class _LoginPageState extends State<LoginPage> {
       onPressed: () {
         if (_formKey.currentState!.validate()) {
           ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text('Processing Data')),
+            const SnackBar(content: Text('Submitting Form')),
           );
           Navigator.push(context,
               MaterialPageRoute(builder: (context) => const HomePage()));
