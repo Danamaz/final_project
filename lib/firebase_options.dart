@@ -63,6 +63,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '164473748704',
     projectId: 'final-project-ec64a',
     storageBucket: 'final-project-ec64a.appspot.com',
+    iosClientId:
+        '164473748704-6dru1qvogm9n2cr6mq0tlksgbgclb36e.apps.googleusercontent.com',
     iosBundleId: 'com.example.finalProject',
   );
 
@@ -72,6 +74,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '164473748704',
     projectId: 'final-project-ec64a',
     storageBucket: 'final-project-ec64a.appspot.com',
+    iosClientId:
+        '164473748704-6dru1qvogm9n2cr6mq0tlksgbgclb36e.apps.googleusercontent.com',
     iosBundleId: 'com.example.finalProject',
   );
 

@@ -1,8 +1,25 @@
+//import 'package:final_project/firebase_options.dart';
 import 'package:final_project/screens/loginpage.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
+//import 'package:firebase_core/firebase_core.dart';
+//import 'package:get_storage/get_storage.dart';
 
 void main() {
+  // // final WidgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+
+  // await GetStorage.init();
+
+  // //FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
+
+  // await Firebase.initializeApp(
+  //   options: DefaultFirebaseOptions.currentPlatform,
+  // );
+
+  // // then(
+  // //   (FirebaseApp value) => Get.put(AuthenticationRepository()),
+  // // );
+
   runApp(const MyApp());
 }
 
@@ -18,25 +35,25 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const SplashSceen(),
+      home: const SplashScreen(),
     );
   }
 }
 
-class SplashSceen extends StatefulWidget {
-  const SplashSceen({super.key});
+class SplashScreen extends StatefulWidget {
+  const SplashScreen({super.key});
 
   @override
-  State<SplashSceen> createState() => _SplashSceenState();
+  State<SplashScreen> createState() => _SplashScreenState();
 }
 
-class _SplashSceenState extends State<SplashSceen> {
+class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
     Timer(const Duration(seconds: 2), () {
       Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (constext) => const LoginPage()),
+        MaterialPageRoute(builder: (context) => const LoginPage()),
       );
     });
   }
