@@ -3,14 +3,13 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
-  SplashScreen({super.key});
+  const SplashScreen({super.key});
 
   @override
   State<SplashScreen> createState() => _SplashScreenState();
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-  
   @override
   void initState() {
     super.initState();
@@ -24,16 +23,18 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-        backgroundColor: Colors.indigo,
-        body: Center(
-          child: Text(
-            'Splash Screen',
-            style: TextStyle(
-                color: Colors.black,
-                fontSize: 30,
-                letterSpacing: 2.0,
-                fontWeight: FontWeight.bold),
+      backgroundColor: Colors.indigo,
+      body: Center(
+        child: Text(
+          'Splash Screen',
+          style: TextStyle(
+            color: Colors.black,
+            fontSize: 30,
+            letterSpacing: 2.0,
+            fontWeight: FontWeight.bold,
           ),
-        ));
+        ),
+      ),
+    );
   }
 }
