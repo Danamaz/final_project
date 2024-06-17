@@ -30,7 +30,7 @@ class _StorePageState extends State<StorePage> {
   @override
   void initState() {
     super.initState();
-    filteredItems = items;
+    filteredItems = List.from(items);
     searchItem.addListener(filterItems);
   }
 
