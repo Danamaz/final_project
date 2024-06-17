@@ -9,6 +9,7 @@ class StorePage extends StatefulWidget {
 }
 
 class _StorePageState extends State<StorePage> {
+  final TextEditingController searchItem = TextEditingController();
   final List<String> items = [
     'Sneaker',
     'Hand Bag',
@@ -23,6 +24,30 @@ class _StorePageState extends State<StorePage> {
     'Lemon',
     'Pepsi Drink',
   ];
+
+  List<String> filteredItems = [];
+
+  @override
+  void initState() {
+    super.initState();
+    filteredItems = items;
+    searchItem.addListener(filterItems);
+  }
+
+  void filterItems() {
+    final search = searchItem.text.toLowerCase();
+    setState(() {
+      filteredItems = items.where((item) {
+        return item.toLowerCase().contains(search);
+      }).toList();
+    });
+  }
+
+  @override
+  void dispose() {
+    searchItem.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -46,6 +71,7 @@ class _StorePageState extends State<StorePage> {
               margin: const EdgeInsets.only(top: 15),
               width: 300,
               child: TextFormField(
+                controller: searchItem,
                 decoration: const InputDecoration(
                   border: OutlineInputBorder(),
                   prefixIcon: Icon(Icons.search_outlined),
@@ -63,11 +89,13 @@ class _StorePageState extends State<StorePage> {
             Expanded(
               child: ListView.builder(
                 padding: const EdgeInsets.only(right: 10),
-                itemCount: items.length,
+                itemCount: filteredItems.length,
                 itemBuilder: (context, index) {
                   return ItemCard(
-                      itemImage: 'assets/${index + 1}.png',
-                      itemName: items[index]);
+                    itemImage:
+                        'assets/${items.indexOf(filteredItems[index]) + 1}.png',
+                    itemName: filteredItems[index],
+                  );
                 },
               ),
             ),
